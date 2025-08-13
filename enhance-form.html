@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced User Registration Form</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f8fafc;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #ffffff;
+            --error: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        section {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            display: block;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: var(--error);
+        }
+
+        input:invalid + .error-message,
+        select:invalid + .error-message,
+        textarea:invalid + .error-message {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 640px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+            
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced Registration Form</h1>
+        <p>Join our platform with this comprehensive sign-up form</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Our Service</h2>
+            <p>We provide an exceptional platform with these key features:</p>
+            <ul>
+                <li>Secure data handling and privacy protection</li>
+                <li>24/7 customer support</li>
+                <li>Customizable user profiles</li>
+                <li>Advanced analytics dashboard</li>
+                <li>Multi-platform accessibility</li>
+            </ul>
+
+            <img src="https://via.placeholder.com/800x400?text=Service+Preview" alt="Our service in action" width="800" height="400">
+
+            <video controls width="800" height="450" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail">
+                <source src="#" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </section>
+
+        <section>
+            <h2>Pricing Plans</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Features</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Starter</td>
+                        <td>Basic features, email support</td>
+                        <td>$9.99/month</td>
+                    </tr>
+                    <tr>
+                        <td>Professional</td>
+                        <td>Advanced features, priority support</td>
+                        <td>$29.99/month</td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise</td>
+                        <td>All features, dedicated account manager</td>
+                        <td>$99.99/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Registration Form</h2>
+            <form id="registrationForm" novalidate>
+                <div class="form-group full-width">
+                    <h3>Personal Information</h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="John" required autocomplete="given-name" minlength="2">
+                    <div class="error-message">Please enter a valid first name (min 2 characters)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required autocomplete="family-name" minlength="2">
+                    <div class="error-message">Please enter a valid last name (min 2 characters)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required autocomplete="email">
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="tel">
+                    <div class="error-message">Please use format: 123-456-7890</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth*</label>
+                    <input type="date" id="dob" name="dob" required autocomplete="bday" max="2005-12-31">
+                    <div class="error-message">You must be at least 18 years old</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country*</label>
+                    <select id="country" name="country" required>
+                        <option value="" disabled selected>Select your country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="JP">Japan</option>
+                    </select>
+                    <div class="error-message">Please select your country</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St" autocomplete="street-address">
+                </div>
+
+                <div class="form-group full-width">
+                    <h3>Account Details</h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username*</label>
+                    <input type="text" id="username" name="username" placeholder="johndoe123" required autocomplete="username" minlength="4" maxlength="20" pattern="[a-zA-Z0-9]+">
+                    <div class="error-message">4-20 characters, letters and numbers only</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="new-password" minlength="8">
+                    <div class="error-message">Password must be at least 8 characters</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password*</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required autocomplete="new-password">
+                    <div class="error-message">Passwords must match</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="referral">Referral Code</label>
+                    <input type="text" id="referral" name="referral" value="WELCOME2023" readonly>
+                </div>
+
+                <div class="form-group full-width">
+                    <h3>Membership Options</h3>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Membership Plan*</label>
+                    <div class="radio-group">
+                        <input type="radio" id="planStarter" name="membershipPlan" value="starter" required>
+                        <label for="planStarter">Starter ($9.99/month)</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="planPro" name="membershipPlan" value="professional">
+                        <label for="planPro">Professional ($29.99/month)</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="planEnterprise" name="membershipPlan" value="enterprise">
+                        <label for="planEnterprise">Enterprise ($99.99/month)</label>
+                    </div>
+                    <div class="error-message">Please select a membership plan</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Interests (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="interestTech" name="interests" value="technology">
+                        <label for="interestTech">Technology</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="interestBusiness" name="interests" value="business">
+                        <label for="interestBusiness">Business</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="interestDesign" name="interests" value="design">
+                        <label for="interestDesign">Design</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="interestMarketing" name="interests" value="marketing">
+                        <label for="interestMarketing">Marketing</label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="bio">About You</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>*</label>
+                    </div>
+                    <div class="error-message">You must accept the terms</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">Subscribe to our newsletter</label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <button type="submit">Complete Registration</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            // Custom password confirmation validation
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPassword').setCustomValidity('Passwords must match');
+                document.querySelector('#confirmPassword + .error-message').style.display = 'block';
+                e.preventDefault();
+            } else {
+                document.getElementById('confirmPassword').setCustomValidity('');
+            }
+
+            // In a real application, you would submit the form to a server
+            if (this.checkValidity()) {
+                alert('Form submitted successfully! (This is a demo)');
+                e.preventDefault();
+            }
+        });
+
+        // Real-time password match validation
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            if (this.value !== password) {
+                this.setCustomValidity('Passwords must match');
+                document.querySelector('#confirmPassword + .error-message').style.display = 'block';
+            } else {
+                this.setCustomValidity('');
+                document.querySelector('#confirmPassword + .error-message').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
